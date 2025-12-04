@@ -20,8 +20,12 @@ function getHumanChoice() {
   return option;
 }
 
+
+
 const compChoice = getComputerChoice();
 const humanChoice = getHumanChoice();
+
+function playGame(compChoice, humanChoice){
 
 const answer =
   "You chose: " + humanChoice + ". But computer chose: " + compChoice;
@@ -73,4 +77,5 @@ else if (humanChoice === "scissors") {
 }
 else {
     console.error("wrong input")
+}
 }

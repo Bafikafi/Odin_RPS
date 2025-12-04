@@ -20,10 +20,9 @@ function getHumanChoice() {
   return option;
 }
 
-const compChoice = getComputerChoice();
-const humanChoice = getHumanChoice();
-
-function playGame(compChoice, humanChoice) {
+function playGame() {
+  const compChoice = getComputerChoice();
+  const humanChoice = getHumanChoice();
   const answer =
     "You chose: " + humanChoice + ". But computer chose: " + compChoice;
 
@@ -72,4 +71,18 @@ function playGame(compChoice, humanChoice) {
   } else {
     console.error("wrong input");
   }
+}
+
+for (let i = 0; i < 5; i++) {
+  playGame();
+  console.log(
+    "You scored: " + humanScore + ". Computer scored: " + computerScore
+  );
+  console.log(
+    humanScore > computerScore
+      ? console.log("You WON! CONGRATS!")
+      : humanScore === computerScore
+      ? console.log("It was a draw! Good attempt")
+      : console.log("You lost :( Better luck next time!")
+  );
 }

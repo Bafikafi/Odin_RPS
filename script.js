@@ -20,62 +20,56 @@ function getHumanChoice() {
   return option;
 }
 
-
-
 const compChoice = getComputerChoice();
 const humanChoice = getHumanChoice();
 
-function playGame(compChoice, humanChoice){
+function playGame(compChoice, humanChoice) {
+  const answer =
+    "You chose: " + humanChoice + ". But computer chose: " + compChoice;
 
-const answer =
-  "You chose: " + humanChoice + ". But computer chose: " + compChoice;
-
-if (humanChoice === "rock") {
-  switch (compChoice) {
-    case "rock":
-      console.log("draw! " + answer);
-      break;
-    case "paper":
-      console.log("Loss! " + answer);
-      computerScore++;
-      break;
-    case "scissors":
-      console.log("Win! " + answer);
-      humanScore++;
-      break;
+  if (humanChoice === "rock") {
+    switch (compChoice) {
+      case "rock":
+        console.log("draw! " + answer);
+        break;
+      case "paper":
+        console.log("Loss! " + answer);
+        computerScore++;
+        break;
+      case "scissors":
+        console.log("Win! " + answer);
+        humanScore++;
+        break;
+    }
+  } else if (humanChoice === "paper") {
+    switch (compChoice) {
+      case "paper":
+        console.log("draw! " + answer);
+        break;
+      case "scissors":
+        console.log("Loss! " + answer);
+        computerScore++;
+        break;
+      case "rock":
+        console.log("Win! " + answer);
+        humanScore++;
+        break;
+    }
+  } else if (humanChoice === "scissors") {
+    switch (compChoice) {
+      case "scissors":
+        console.log("draw! " + answer);
+        break;
+      case "rock":
+        console.log("Loss! " + answer);
+        computerScore++;
+        break;
+      case "paper":
+        console.log("Win! " + answer);
+        humanScore++;
+        break;
+    }
+  } else {
+    console.error("wrong input");
   }
-}
-else if (humanChoice === "paper") {
-  switch (compChoice) {
-    case "paper":
-      console.log("draw! " + answer);
-      break;
-    case "scissors":
-      console.log("Loss! " + answer);
-      computerScore++;
-      break;
-    case "rock":
-      console.log("Win! " + answer);
-      humanScore++;
-      break;
-  }
-}
-else if (humanChoice === "scissors") {
-  switch (compChoice) {
-    case "scissors":
-      console.log("draw! " + answer);
-      break;
-    case "rock":
-      console.log("Loss! " + answer);
-      computerScore++;
-      break;
-    case "paper":
-      console.log("Win! " + answer);
-      humanScore++;
-      break;
-  }
-}
-else {
-    console.error("wrong input")
-}
 }
